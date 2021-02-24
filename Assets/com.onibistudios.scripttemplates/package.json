@@ -1,9 +1,9 @@
 {
     "name": "com.onibistudios.scripttemplates",
-    "version": "1.0.1",
+    "version": "1.1.0",
     "displayName": "Script Templates",
     "description": "Package allows creating C# files with custom icons using templates under Assets/Create menu.",
-    "unity": "2019.4",
+    "unity": "2020.1",
     "keywords": [
       "script",
       "template"

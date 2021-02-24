@@ -8,9 +8,9 @@ using System.Linq;
 using UnityEditor.ProjectWindowCallback;
 
 // The requirement is that the class name is the same as the script name to properly find a path to templates
-namespace OnibiStudios
+namespace OnibiStudios.Editor
 {
-    public class ScriptTemplates
+    public class OnibiTemplates
     {
         // Folder with script templates relative to this script file
         private const string TemplatesFolder = "Templates";
@@ -22,7 +22,6 @@ namespace OnibiStudios
         [DidReloadScripts]
         private static void FindPath()
         {
-            //AssetDatabase.GetAssetPath()
             // Check if the Package is in the Project
             if(AssetDatabase.IsValidFolder("Packages/com.onibistudios.templatescripts/Editor"))
             {
@@ -60,7 +59,6 @@ namespace OnibiStudios
                 ErrorMatchName(className);
                 return;
             }
-
             // Found one file with exactly the same name
             else if(foundFiles.Count == 1)
             {
@@ -69,7 +67,6 @@ namespace OnibiStudios
                 // Remove file name
                 packagePath = packagePath.Substring(0, packagePath.Length - packagePath.Split(Path.DirectorySeparatorChar).Last().Length - 1);
             }
-
             // Found more than one file with the same name
             else if(foundFiles.Count > 1)
             {
